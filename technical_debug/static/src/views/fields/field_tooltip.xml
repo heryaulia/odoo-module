@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="technical_debug.FieldTooltip" t-inherit="web.FieldTooltip" t-inherit-mode="extension">
+        <!-- Add module information at the end of the technical tooltip list -->
+        <xpath expr="//ul[@class='o-tooltip--technical']" position="inside">
+            <li t-if="field and field.modules" data-item="modules">
+                <span class="o-tooltip--technical--title">Module:</span>
+                <t t-esc="field.modules"/>
+            </li>
+        </xpath>
+    </t>
+
+</templates>

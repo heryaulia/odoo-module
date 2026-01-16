@@ -1,0 +1,41 @@
+# --- Python Specific ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+# Virtual environment
+.venv/
+venv/
+env/
+# Tests
+.pytest_cache/
+# Distribution / packaging
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+
+# --- Odoo Specific ---
+# Odoo Server files (usually not in a module, but good to have)
+odoo-server.log
+sessions/
+run/
+
+# Odoo module files
+*.pot
+*.po
+
+# --- Editor/IDE Files ---
+# Visual Studio Code
+.vscode/
+
+# Vim/Nano swap files
+*~
+*.swp
+.netrwhist
+.DS_Store
+
+# IntelliJ/PyCharm
+.idea/
