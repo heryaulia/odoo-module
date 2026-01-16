@@ -1,0 +1,25 @@
+<odoo>
+    <data noupdate="1">
+        <!-- JWT Secret is handled by Python auto-generation to avoid unique constraint errors if it already exists -->
+
+
+        <!-- Roles -->
+        <record id="role_admin" model="app.role">
+            <field name="name">Admin</field>
+        </record>
+
+        <record id="role_user" model="app.role">
+            <field name="name">User</field>
+        </record>
+
+        <!-- Dummy User -->
+        <record id="user_dummy" model="app.user">
+            <field name="name">Dummy User</field>
+            <field name="email">dummy@example.com</field>
+            <field name="default_company_id" ref="base.main_company"/>
+            <field name="allowed_company_ids" eval="[(4, ref('base.main_company'))]"/>
+            <field name="role_ids" eval="[(4, ref('role_user'))]"/>
+            <field name="password">dummy123</field> <!-- Will be hashed by write/create override if logic exists, otherwise explicitly handled -->
+        </record>
+    </data>
+</odoo>

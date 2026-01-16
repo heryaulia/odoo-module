@@ -1,0 +1,55 @@
+<odoo>
+    <!-- <record id="view_role_model_permission_form" model="ir.ui.view">
+        <field name="name">role.model.permission.form</field>
+        <field name="model">app.role.model.permission</field>
+        <field name="arch" type="xml">
+            <form string="Role Model Permission">
+                <sheet>
+                    <group>
+                        <field name="role_id"/>
+                        <field name="model_id"/>
+                        <field name="can_create"/>
+                        <field name="can_read"/>
+                        <field name="can_update"/>
+                        <field name="can_delete"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record> -->
+
+    <record id="view_role_model_permission_tree" model="ir.ui.view">
+        <field name="name">role.model.permission.tree</field>
+        <field name="model">app.role.model.permission</field>
+        <field name="arch" type="xml">
+            <tree string="Role Model Permissions" editable="bottom" create="0" edit="0" duplicate="0" delete="1">
+                <field name="name"/>
+                <field name="role_id"/>
+                <field name="model_id"/>
+                <field name="can_create"/>
+                <field name="can_read"/>
+                <field name="can_update"/>
+                <field name="can_delete"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id="view_role_model_permission_search" model="ir.ui.view">
+        <field name="name">role.model.permission.search</field>
+        <field name="model">app.role.model.permission</field>
+        <field name="arch" type="xml">
+            <search string="Search Role Model Permissions">
+                <field name="role_id"/>
+                <field name="model_id"/>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="action_role_model_permission" model="ir.actions.act_window">
+        <field name="name">Role Model Permissions</field>
+        <field name="res_model">app.role.model.permission</field>
+        <!-- <field name="view_mode">tree,form</field> -->
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_role_model_permission_tree"/>
+    </record>
+</odoo>

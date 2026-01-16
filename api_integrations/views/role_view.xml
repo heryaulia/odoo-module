@@ -1,0 +1,55 @@
+<odoo>
+    <record id="view_role_form" model="ir.ui.view">
+        <field name="name">role.form</field>
+        <field name="model">app.role</field>
+        <field name="arch" type="xml">
+            <form string="Role">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Permissions">
+                            <field name="model_permission_ids" widget="one2many" mode="tree,form" editable="bottom">
+                                <tree editable="bottom">
+                                    <field name="model_id" width="40%" options="{'no_open': True, 'no_create': True, 'no_edit': True}"/>
+                                    <field name="can_create" width="15%"/>
+                                    <field name="can_read" width="15%"/>
+                                    <field name="can_update" width="15%"/>
+                                    <field name="can_delete" width="15%"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_role_tree" model="ir.ui.view">
+        <field name="name">role.tree</field>
+        <field name="model">app.role</field>
+        <field name="arch" type="xml">
+            <tree string="Roles">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id="view_role_search" model="ir.ui.view">
+        <field name="name">role.search</field>
+        <field name="model">app.role</field>
+        <field name="arch" type="xml">
+            <search string="Search Roles">
+                <field name="name"/>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="action_role" model="ir.actions.act_window">
+        <field name="name">Roles</field>
+        <field name="res_model">app.role</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_role_tree"/>
+    </record>
+</odoo>

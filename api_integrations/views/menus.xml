@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="menu_api_integrations_root" name="API Integrations" sequence="10"/>
+
+    <menuitem id="menu_app_user" name="App Users" parent="menu_api_integrations_root" action="action_user" sequence="10"/>
+    
+    <menuitem id="menu_configuration" name="Configuration" parent="menu_api_integrations_root" sequence="20"/>
+    <menuitem id="menu_app_role" name="Roles" parent="menu_configuration" action="action_role" sequence="10"/>
+    <menuitem id="menu_app_role_model_permission" name="Role Permissions" parent="menu_configuration" action="action_role_model_permission" sequence="20"/>
+</odoo>
